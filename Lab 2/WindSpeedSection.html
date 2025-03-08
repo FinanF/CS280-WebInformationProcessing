@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wind Speed Section</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body id="WSbody">
+    <nav>
+      <ul>
+        <li><a href="Homepage.html">Home Page</a></li>
+        <li><a href="HumiditySection.html">Humidity Section</a></li>
+        <li><a href="TemputatureSection.html">Temperature Section</a></li>
+        <li><a href="UVIndexSection.html">UV Index Section</a></li>
+      </ul>
+    </nav>
+    <p>Wind Speed</p>
+    <p id="WindOutput">Loading...</p>
+    <i class="material-icons" id="icon">air</i>
+    <script defer src="script.js"></script>
+    <script>
+      let temp = 10;
+      document.addEventListener("DOMContentLoaded", () => {
+        let windSpeed = localStorage.getItem("windSpeed");
+        let windSpeedNum = windSpeed.substring(0, windSpeed.length - 2);
+        if (windSpeed) {
+          document.getElementById(
+            "WindOutput"
+          ).innerHTML = `Wind Speed: ${windSpeed}`;
+          if (windSpeedNum <= 20) {
+            document.getElementById("icon").style.color = "#0000ff";
+          } else {
+            document.getElementById("icon").style.color = "#00ff00";
+          }
+          console.log(windSpeedNum);
+        } else {
+          document.getElementById("WindOutput").innerHTML =
+            "No wind speed data available.";
+        }
+      });
+    </script>
+  </body>
+</html>

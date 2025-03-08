@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="Styles.css" />
+  </head>
+  <body>
+    <script defer src="Script.js"></script>
+    <nav>
+      <h1>Pomodoro Timer</h1>
+    </nav>
+    <svg width="150" height="150">
+      <line
+        x1="70"
+        y1="0"
+        x2="70"
+        y2="20"
+        style="stroke: green; stroke-width: 5"
+      />
+      <circle cx="60" cy="50" r="40" fill="#de2a2a" />
+      <circle cx="80" cy="50" r="40" fill="red" />
+    </svg>
+    <div id="container">
+      <div id="timer">25:00</div>
+      <button id="PRButton" onclick="started()">Start</button>
+      <button onclick="stopped()">Stop</button>
+      <button onclick="paused()">Pause</button>
+    </div>
+  </body>
+</html>

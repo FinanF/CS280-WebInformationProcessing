@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HumiditySection</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body id="Hbody">
+    <nav>
+      <ul>
+        <li><a href="Homepage.html">Home Page</a></li>
+        <li><a href="TemputatureSection.html">Temperature Section</a></li>
+        <li><a href="UVIndexSection.html">UV Index Section</a></li>
+        <li><a href="WindSpeedSection.html">Wind Speed Section</a></li>
+      </ul>
+    </nav>
+    <p>Humidity</p>
+    <p id="HSoutput">Loading...</p>
+    <i class="material-icons" id="icon">water_drop</i>
+    <script defer src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let humidity = localStorage.getItem("humidity");
+        if (humidity) {
+          document.getElementById(
+            "HSoutput"
+          ).innerHTML = `Humidity: ${humidity}%`;
+          if (Number(humidity) <= 50) {
+            document.getElementById("icon").style.color = "lightblue";
+          } else {
+            document.getElementById("icon").style.color = "darkblue";
+          }
+        } else {
+          document.getElementById("HSoutput").innerHTML =
+            "No humidity data available.";
+        }
+      });
+    </script>
+  </body>
+</html>

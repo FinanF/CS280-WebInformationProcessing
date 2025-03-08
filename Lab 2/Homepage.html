@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomePage</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body>
+    <script defer src="script.js"></script>
+    <nav>
+      <ul>
+        <li><a href="HumiditySection.html">Humidity Section</a></li>
+        <li><a href="TemputatureSection.html">Temperature Section</a></li>
+        <li><a href="UVIndexSection.html">UV Index Section</a></li>
+        <li><a href="WindSpeedSection.html">Wind Speed Section</a></li>
+      </ul>
+    </nav>
+    <br />
+    <input type="text" id="input" placeholder="Enter a city" />
+    <br />
+    <button onclick="getCityData()">Get City</button>
+    <p id="output"></p>
+  </body>
+</html>

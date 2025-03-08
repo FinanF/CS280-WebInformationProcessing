@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UV Index Section</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body id="UVbody">
+    <nav>
+      <ul>
+        <li><a href="Homepage.html">Home Page</a></li>
+        <li><a href="HumiditySection.html">Humidity Section</a></li>
+        <li><a href="TemputatureSection.html">Temperature Section</a></li>
+        <li><a href="WindSpeedSection.html">Wind Speed Section</a></li>
+      </ul>
+    </nav>
+    <p>UV Index</p>
+    <p id="UVOutput">Loading...</p>
+    <i class="material-icons" id="icon">sunny</i>
+    <script defer src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let uvIndex = localStorage.getItem("uvIndex");
+        if (uvIndex) {
+          document.getElementById(
+            "UVOutput"
+          ).innerHTML = `UV Index: ${uvIndex}`;
+          if (Number(uvIndex) <= 5) {
+            document.getElementById("icon").style.color = "orange";
+          } else {
+            document.getElementById("icon").style.color = "purple";
+          }
+        } else {
+          document.getElementById("UVOutput").innerHTML =
+            "No UV index data available.";
+        }
+      });
+    </script>
+  </body>
+</html>

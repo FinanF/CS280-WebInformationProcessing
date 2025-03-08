@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Section</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body id="Tbody">
+    <nav>
+      <ul>
+        <li><a href="Homepage.html">Home Page</a></li>
+        <li><a href="HumiditySection.html">Humidity Section</a></li>
+        <li><a href="UVIndexSection.html">UV Index Section</a></li>
+        <li><a href="WindSpeedSection.html">Wind Speed Section</a></li>
+      </ul>
+    </nav>
+    <p>Temperature</p>
+    <p id="TempOutput">Loading...</p>
+    <button onclick="TemperatureChange()">C/F</button>
+    <br />
+    <i class="material-icons" id="icon">thermostat</i>
+    <script defer src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let temperature = localStorage.getItem("temperatureCelsius");
+        if (temperature) {
+          document.getElementById(
+            "TempOutput"
+          ).innerHTML = `Temperature: ${temperature}°C`;
+          if (Number(temperature) <= 20) {
+            document.getElementById("icon").style.color = "blue";
+          } else {
+            document.getElementById("icon").style.color = "yellow";
+          }
+        } else {
+          document.getElementById("TempOutput").innerHTML =
+            "No temperature data available.";
+        }
+      });
+    </script>
+  </body>
+</html>

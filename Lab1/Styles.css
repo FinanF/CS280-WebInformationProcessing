@@ -1,0 +1,41 @@
+body {
+    background-color: lightblue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#buttons {
+    display: flex;
+    gap: 5px;
+}
+
+#buttons button {
+    color: white;
+    background-color: rgb(36, 226, 36);
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#buttons button:hover {
+    background-color: rgb(30, 180, 30);
+}
+
+#timer {
+    background-color: white;
+    border-width: 20px;
+    border-color: white;
+}
