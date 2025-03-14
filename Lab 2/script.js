@@ -1,6 +1,6 @@
 function getCityData() {
     let inputCity = document.getElementById("input").value.trim();
-    fetch("sample.json")
+    fetch("sample.json") // PROMISE
     .then(response => response.json())
     .then(data => {
         let cityData = data.find(city => city.cityName.toLowerCase() === inputCity.toLowerCase());
