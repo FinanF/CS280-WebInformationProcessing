@@ -1,0 +1,90 @@
+/* App.css */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffebf0;
+}
+
+.container {
+  text-align: center;
+  background: #fff5f7;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  margin: auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff5f7;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+header ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+header li {
+  margin: 0 10px;
+}
+
+h1 {
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #ff1493;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff1493;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+input, select {
+  padding: 10px;
+  border: 2px solid #ff69b4;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: calc(100% - 24px);
+  box-sizing: border-box;
+}
+
+input::placeholder, select {
+  color: #ff69b4;
+}
