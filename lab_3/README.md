@@ -1,4 +1,4 @@
-# School SQL Project
+# Assignment 3: Full-Stack Music Application 
 
 This project is a full-stack application that connects to a school SQL server using a backend server built with Node.js and Express, and a frontend application built with React.
 
