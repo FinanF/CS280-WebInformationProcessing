@@ -106,7 +106,7 @@ function Album() {
         ))}
       </select>
       <input
-        type="text"
+        type="number"
         name="release_year"
         value={newAlbum.release_year}
         onChange={handleInputChange}
