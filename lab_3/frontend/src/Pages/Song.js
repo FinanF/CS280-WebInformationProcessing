@@ -87,7 +87,7 @@ function Song() {
         placeholder="Song Name"
       />
       <input
-        type="number"
+        type="numbers"
         name="release_year"
         value={newSong.release_year}
         onChange={handleInputChange}

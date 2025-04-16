@@ -1,27 +1,37 @@
--- Create Artist Table
-DROP TABLE IF EXISTS Artist;
-CREATE TABLE Artist (
-    artist_id INT AUTO_INCREMENT PRIMARY KEY,
-    artist_name VARCHAR(255) NOT NULL,
-    monthly_listeners INT DEFAULT 0,
-    genre VARCHAR(100) NOT NULL
+-- Drop tables if they already exist
+DROP TABLE IF EXISTS JourneyPlan;
+DROP TABLE IF EXISTS TravelLog;
+DROP TABLE IF EXISTS User;
+-- User Model
+CREATE TABLE User (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL CHECK (CHAR_LENGTH(password) >= 8),
+    email VARCHAR(255) NOT NULL UNIQUE,
+    address VARCHAR(255),
+    travel_logs JSON,
+    -- Array of travel log IDs
+    journey_plans JSON -- Array of journey plan IDs
 );
--- Create Album Table
-DROP TABLE IF EXISTS Album;
-CREATE TABLE Album (
-    album_id INT AUTO_INCREMENT PRIMARY KEY,
-    album_name VARCHAR(255) NOT NULL,
-    artist_id INT,
-    release_year INT NOT NULL,
-    number_of_listens INT DEFAULT 0,
-    FOREIGN KEY (artist_id) REFERENCES Artist(artist_id)
+-- Travel Log Model
+CREATE TABLE TravelLog (
+    travel_log_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    post_date DATE NOT NULL,
+    tags JSON -- Array of strings
 );
--- Create Song Table
-DROP TABLE IF EXISTS Song;
-CREATE TABLE Song (
-    song_id INT AUTO_INCREMENT PRIMARY KEY,
-    song_name VARCHAR(255) NOT NULL,
-    release_year INT NOT NULL,
-    album_id INT,
-    FOREIGN KEY (album_id) REFERENCES Album(album_id)
+-- Journey Plan Model
+CREATE TABLE JourneyPlan (
+    journey_plan_id INT AUTO_INCREMENT PRIMARY KEY,
+    journey_plan_name VARCHAR(255) NOT NULL,
+    journey_plan_locations JSON,
+    -- Array of strings
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    activities JSON,
+    -- Array of strings
+    description TEXT
 );

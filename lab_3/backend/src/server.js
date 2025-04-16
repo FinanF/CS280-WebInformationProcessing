@@ -5,9 +5,8 @@ const cors = require("cors");
 const app = express();
 const port = 5000;
 
-// Enable CORS for React app
 app.use(cors());
-app.use(express.json()); // Add this line to parse JSON request bodies
+app.use(express.json());
 
 // MySQL connection pool
 const pool = mysql
